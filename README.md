@@ -26,16 +26,6 @@ Copy terraform.tfvars.example to terraform.tfvars and adjust values such as:
 - node_os_sku: set this to the same image family used by your IACAzure environment
 - private_cluster_enabled: set to true for a more secure design or false if you need a public API server
 
-## Remote state backend
-
-This repository uses an Azure Storage backend for Terraform state. Copy `backend.tfvars.example` to `backend.tfvars` and update the values to match your IACAzure storage account and container.
-
-```bash
-terraform init -backend-config=backend.tfvars
-```
-
-The state file will be stored in the same Azure storage account and container you configure for IACAzure.
-
 ## Local validation
 
 ```bash

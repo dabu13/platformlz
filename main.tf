@@ -13,40 +13,40 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "rg" {
+resource "azurerm_resource_group" "this" {
   name     = var.resource_group_name
   location = var.location
   tags     = var.tags
 }
 
-resource "azurerm_virtual_network" "vnet" {
+resource "azurerm_virtual_network" "this" {
   name                = "vnet-${var.cluster_name}"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.this.location
+  resource_group_name = azurerm_resource_group.this.name
   address_space       = [var.vnet_address_space]
   tags                = var.tags
 }
 
 resource "azurerm_subnet" "aks" {
   name                 = "snet-aks"
-  resource_group_name  = azurerm_resource_group.rg.name
-  virtual_network_name = azurerm_virtual_network.vnet.name
+  resource_group_name  = azurerm_resource_group.this.name
+  virtual_network_name = azurerm_virtual_network.this.name
   address_prefixes     = [var.aks_subnet_address_prefix]
 }
 
-resource "azurerm_log_analytics_workspace" "law" {
+resource "azurerm_log_analytics_workspace" "this" {
   name                = "law-${var.cluster_name}"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.this.location
+  resource_group_name = azurerm_resource_group.this.name
   sku                 = "PerGB2018"
   retention_in_days   = var.log_analytics_retention_in_days
   tags                = var.tags
 }
 
-resource "azurerm_kubernetes_cluster" "aks" {
+resource "azurerm_kubernetes_cluster" "this" {
   name                              = var.cluster_name
-  location                          = azurerm_resource_group.rg.location
-  resource_group_name               = azurerm_resource_group.rg.name
+  location                          = azurerm_resource_group.this.location
+  resource_group_name               = azurerm_resource_group.this.name
   dns_prefix                        = var.cluster_name
   sku_tier                          = "Standard"
   kubernetes_version                = var.kubernetes_version
@@ -85,7 +85,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   }
 
   oms_agent {
-    log_analytics_workspace_id = azurerm_log_analytics_workspace.law.id
+    log_analytics_workspace_id = azurerm_log_analytics_workspace.this.id
   }
 
   depends_on = [azurerm_subnet.aks]
@@ -94,5 +94,5 @@ resource "azurerm_kubernetes_cluster" "aks" {
 resource "azurerm_role_assignment" "kubelet_network_contributor" {
   scope                = azurerm_subnet.aks.id
   role_definition_name = "Network Contributor"
-  principal_id         = azurerm_kubernetes_cluster.aks.kubelet_identity[0].object_id
+  principal_id         = azurerm_kubernetes_cluster.this.kubelet_identity[0].object_id
 }

@@ -30,7 +30,6 @@ crash.log
 *.tfstate.*
 tfplan
 *.tfplan
-backend.tfvars
 
 # Git files
 *.orig
