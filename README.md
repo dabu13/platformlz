@@ -41,6 +41,7 @@ The state file will be stored in the same Azure storage account and container yo
 ```bash
 terraform init
 terraform plan
+##updated environment secret
 ```
 
 ## GitHub Actions
