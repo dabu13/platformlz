@@ -17,3 +17,13 @@ output "kubelet_identity_object_id" {
   description = "Object ID of the AKS kubelet identity."
   value       = azurerm_kubernetes_cluster.this.kubelet_identity[0].object_id
 }
+
+output "acr_login_server" {
+  description = "Login server for the Azure Container Registry."
+  value       = azurerm_container_registry.this.login_server
+}
+
+output "app_gateway_public_ip" {
+  description = "Public IP address for the Application Gateway WAF."
+  value       = azurerm_public_ip.appgw.ip_address
+}

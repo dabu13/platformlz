@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlatformLZ Demo</title>
+  <style>
+    body { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0f172a, #0f2d55); color: white; }
+    .card { width: min(100%, 680px); padding: 48px; border-radius: 32px; background: rgba(15, 23, 42, 0.96); box-shadow: 0 30px 80px rgba(15, 23, 42, 0.45); border: 1px solid rgba(148, 163, 184, 0.12); }
+    h1 { font-size: clamp(2.5rem, 4vw, 4rem); margin: 0 0 24px; letter-spacing: -0.05em; }
+    p { margin: 0 0 16px; line-height: 1.7; color: #cbd5e1; }
+    .badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; border-radius: 999px; background: rgba(59, 130, 246, 0.15); color: #bfdbfe; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.08em; }
+    .grid { display: grid; gap: 20px; margin-top: 32px; }
+    .card-inner { background: rgba(255,255,255,0.04); border-radius: 20px; padding: 24px; border: 1px solid rgba(148, 163, 184, 0.08); }
+    .card-inner h2 { margin: 0 0 12px; font-size: 1.25rem; }
+    .card-inner p { margin: 0; color: #cbd5e1; }
+    .footer { margin-top: 32px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.9rem; color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">PlatformLZ Demo</div>
+    <h1>Secure AKS App with App Gateway & WAF</h1>
+    <p>This demo app is deployed as a container in the same AKS cluster as the infrastructure code, with networking and security controls handled by Terraform.</p>
+    <div class="grid">
+      <div class="card-inner">
+        <h2>API Health</h2>
+        <p>Check the endpoint at <code>/api/health</code> for status and metadata.</p>
+      </div>
+      <div class="card-inner">
+        <h2>Security-first</h2>
+        <p>Built with Helmet.js for HTTP headers and exposed through App Gateway with WAF.</p>
+      </div>
+      <div class="card-inner">
+        <h2>Modern UI</h2>
+        <p>Responsive design based on a clean, dark tech dashboard style.</p>
+      </div>
+    </div>
+    <div class="footer">
+      <span>Powered by Node.js + Express</span>
+      <span>Running in AKS with pod security standards</span>
+    </div>
+  </div>
+</body>
+</html>

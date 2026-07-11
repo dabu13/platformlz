@@ -52,6 +52,18 @@ variable "aks_subnet_address_prefix" {
   default     = "10.20.1.0/24"
 }
 
+variable "app_gateway_subnet_prefix" {
+  description = "Subnet prefix for the Application Gateway."
+  type        = string
+  default     = "10.20.2.0/24"
+}
+
+variable "app_internal_lb_ip" {
+  description = "Internal IP address used by the AKS internal load balancer for the demo app."
+  type        = string
+  default     = "10.20.2.10"
+}
+
 variable "service_cidr" {
   description = "CIDR used for Kubernetes services inside the cluster."
   type        = string
@@ -80,6 +92,12 @@ variable "log_analytics_retention_in_days" {
   description = "Retention for the Log Analytics workspace."
   type        = number
   default     = 30
+}
+
+variable "acr_name" {
+  description = "Optional Azure Container Registry name. Leave blank to generate one automatically."
+  type        = string
+  default     = ""
 }
 
 variable "tags" {

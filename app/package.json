@@ -1,0 +1,13 @@
+{
+  "name": "platformlz-demo",
+  "version": "0.1.0",
+  "description": "A simple demo Node.js app for AKS with App Gateway and WAF.",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "helmet": "^7.0.0"
+  }
+}
