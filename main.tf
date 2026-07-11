@@ -104,13 +104,12 @@ resource "random_string" "acr_suffix" {
 }
 
 resource "azurerm_container_registry" "this" {
-  name = var.acr_name != "" ? var.acr_name : substr(regexreplace(lower("${var.cluster_name}acr${random_string.acr_suffix.result}"), "[^a-z0-9]", ""), 0, 50)
-  resource_group_name      = azurerm_resource_group.this.name
-  location                 = azurerm_resource_group.this.location
-  sku                      = "Standard"
-  admin_enabled            = false
-  georeplication_locations = []
-  tags                     = var.tags
+  name = var.acr_name != "" ? var.acr_name : substr(lower("${var.cluster_name}acr${random_string.acr_suffix.result}"), 0, 50)
+  resource_group_name = azurerm_resource_group.this.name
+  location            = azurerm_resource_group.this.location
+  sku                 = "Standard"
+  admin_enabled       = false
+  tags                = var.tags
 }
 
 resource "azurerm_subnet" "appgw" {
