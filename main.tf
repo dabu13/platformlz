@@ -133,8 +133,8 @@ resource "azurerm_application_gateway" "this" {
   resource_group_name = azurerm_resource_group.this.name
   location            = azurerm_resource_group.this.location
   sku {
-    name     = "WAF_v2"
-    tier     = "WAF_v2"
+    name     = "Standard_v2"
+    tier     = "Standard_v2"
     capacity = 2
   }
 
@@ -195,12 +195,10 @@ resource "azurerm_application_gateway" "this" {
     backend_http_settings_name = "app-http-settings"
   }
 
-  waf_configuration {
-    enabled          = true
-    firewall_mode    = "Prevention"
-    rule_set_type    = "OWASP"
-    rule_set_version = "3.2"
-  }
+  # WAF removed due to ApplicationGatewayWafConfigurationDeprecated.
+  # To use WAF, create an azurerm_web_application_firewall_policy and attach it
+  # with `firewall_policy_id = azurerm_web_application_firewall_policy.example.id`.
+  # See: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/web_application_firewall_policy
 
   tags = var.tags
 }
