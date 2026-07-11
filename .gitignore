@@ -24,6 +24,13 @@ Thumbs.db
 
 # Terraform crash logs
 crash.log
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+tfplan
+*.tfplan
+backend.tfvars
 
 # Git files
 *.orig

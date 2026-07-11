@@ -1,0 +1,6 @@
+# Copy this file to backend.tfvars and update the values to match your IACAzure storage backend.
+
+resource_group_name  = "<iacazure-resource-group>"
+storage_account_name = "<iacazure-storage-account>"
+container_name       = "<iacazure-container>"
+key                  = "platformlz/terraform.tfstate"

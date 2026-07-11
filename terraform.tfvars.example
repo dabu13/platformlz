@@ -1,0 +1,15 @@
+# Copy this file to terraform.tfvars and adjust the values for your environment.
+
+location                   = "eastus2"
+resource_group_name        = "rg-aks-secure-eastus2"
+cluster_name               = "aks-secure-eastus2"
+node_count                 = 2
+node_vm_size               = "Standard_D2s_v3"
+node_os_sku                = "Ubuntu"
+private_cluster_enabled    = true
+
+# If you want to allow a public API server, add your corporate IPs here.
+# authorized_ip_ranges      = ["203.0.113.10/32"]
+
+# AKS manages the node image, so the closest equivalent to the IACAzure image selection is the OS image family above.
+# If your IACAzure environment uses a different image family, update node_os_sku accordingly.
