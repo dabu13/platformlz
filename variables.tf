@@ -98,6 +98,11 @@ variable "acr_name" {
   description = "Optional Azure Container Registry name. Leave blank to generate one automatically."
   type        = string
   default     = ""
+
+  validation {
+    condition     = var.acr_name == "" || can(regex("^[a-z0-9]{5,50}$", var.acr_name))
+    error_message = "acr_name must be empty or a valid ACR name: 5-50 lowercase letters and digits only."
+  }
 }
 
 variable "tags" {
