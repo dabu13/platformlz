@@ -1,0 +1,665 @@
+﻿checkov : File association not found for extension .py
+At line:1 char:31
++ ... tion 'E:\platformlz'; checkov -d . --framework terraform 2>&1 | Out-F ...
++                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (File associatio...r extension .py 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.3.2 
+Update available 3.3.2 -> 3.3.8
+Run pip3 install -U checkov to update 
+
+
+terraform scan results:
+
+Passed checks: 17, Failed checks: 20, Skipped checks: 0
+
+Check: CKV_AZURE_183: "Ensure that VNET uses local DNS addresses"
+	PASSED for resource: azurerm_virtual_network.this
+	File: \main.tf:26-32
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-183
+[0mCheck: CKV_AZURE_182: "Ensure that VNET has at least 2 connected DNS Endpoints"
+	PASSED for resource: azurerm_virtual_network.this
+	File: \main.tf:26-32
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-182
+[0mCheck: CKV_AZURE_6: "Ensure AKS has an API Server Authorized IP Ranges enabled"
+	PASSED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azr-kubernetes-3
+[0mCheck: CKV_AZURE_8: "Ensure Kubernetes Dashboard is disabled"
+	PASSED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azr-kubernetes-5
+[0mCheck: CKV_AZURE_115: "Ensure that AKS enables private clusters"
+	PASSED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/ensure-that-aks-enables-private-clusters
+[0mCheck: CKV_AZURE_170: "Ensure that AKS use the Paid Sku for its SLA"
+	PASSED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-170
+[0mCheck: CKV_AZURE_4: "Ensure AKS logging to Azure Monitoring is Configured"
+	PASSED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azr-kubernetes-1
+[0mCheck: CKV_AZURE_7: "Ensure AKS cluster has Network Policy configured"
+	PASSED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azr-kubernetes-4
+[0mCheck: CKV_AZURE_143: "Ensure AKS cluster nodes do not have public IP addresses"
+	PASSED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-143
+[0mCheck: CKV_AZURE_169: "Ensure Azure Kubernetes Cluster (AKS) nodes use scale sets"
+	PASSED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/azr-kubernetes-169
+[0mCheck: CKV_AZURE_5: "Ensure RBAC is enabled on AKS clusters"
+	PASSED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azr-kubernetes-2
+[0mCheck: CKV_AZURE_116: "Ensure that AKS uses Azure Policies Add-on"
+	PASSED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/ensure-that-aks-uses-azure-policies-add-on
+[0mCheck: CKV_AZURE_246: "Ensure Azure AKS cluster HTTP application routing is disabled"
+	PASSED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-246
+[0mCheck: CKV_AZURE_137: "Ensure ACR admin account is disabled"
+	PASSED for resource: azurerm_container_registry.this
+	File: \main.tf:107-114
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-iam-policies/bc-azure-137
+[0mCheck: CKV_AZURE_138: "Ensures that ACR disables anonymous pulling of images"
+	PASSED for resource: azurerm_container_registry.this
+	File: \main.tf:107-114
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-iam-policies/ensure-azure-acr-disables-anonymous-image-pulling
+[0mCheck: CKV_AZURE_163: "Enable vulnerability scanning for container images."
+	PASSED for resource: azurerm_container_registry.this
+	File: \main.tf:107-114
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-163
+[0mCheck: CKV2_AZURE_29: "Ensure AKS cluster has Azure CNI networking enabled"
+	PASSED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-29
+[0mCheck: CKV_AZURE_227: "Ensure that the AKS cluster encrypt temp disks, caches, and data flows between Compute and Storage resources"
+	FAILED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azure-227
+[0m
+		[37m50 | [33mresource "azurerm_kubernetes_cluster" "this" {
+		[37m51 | [33m  name                              = var.cluster_name
+		[37m52 | [33m  location                          = azurerm_resource_group.this.location
+		[37m53 | [33m  resource_group_name               = azurerm_resource_group.this.name
+		[37m54 | [33m  dns_prefix                        = var.cluster_name
+		[37m55 | [33m  sku_tier                          = "Standard"
+		[37m56 | [33m  kubernetes_version                = var.kubernetes_version
+		[37m57 | [33m  private_cluster_enabled           = var.private_cluster_enabled
+		[37m58 | [33m  private_dns_zone_id               = var.private_cluster_enabled ? "System" : null
+		[37m59 | [33m  role_based_access_control_enabled = true
+		[37m60 | [33m  azure_policy_enabled              = true
+		[37m61 | [33m  oidc_issuer_enabled               = true
+		[37m62 | [33m  workload_identity_enabled         = true
+		[37m63 | [33m  tags                              = var.tags
+		[37m64 | [33m
+		[37m65 | [33m  default_node_pool {
+		[37m66 | [33m    name                       = "system"
+		[37m67 | [33m    node_count                 = var.node_count
+		[37m68 | [33m    vm_size                    = var.node_vm_size
+		[37m69 | [33m    os_sku                     = var.node_os_sku
+		[37m70 | [33m    os_disk_type               = "Managed"
+		[37m71 | [33m    vnet_subnet_id             = azurerm_subnet.aks.id
+		[37m72 | [33m    type                       = "VirtualMachineScaleSets"
+		[37m73 | [33m    auto_scaling_enabled       = false
+		[37m74 | [33m    enable_encryption_at_host  = true
+		[37m75 | [33m    upgrade_settings {
+		[37m76 | [33m      max_surge = "33%"
+		[37m77 | [33m    }
+		[37m78 | [33m  }
+		[37m79 | [33m
+		[37m80 | [33m  identity {
+		[37m81 | [33m    type = "SystemAssigned"
+		[37m82 | [33m  }
+		[37m83 | [33m
+		[37m84 | [33m  network_profile {
+		[37m85 | [33m    network_plugin    = "azure"
+		[37m86 | [33m    network_policy    = "azure"
+		[37m87 | [33m    load_balancer_sku = "standard"
+		[37m88 | [33m    service_cidr      = var.service_cidr
+		[37m89 | [33m    dns_service_ip    = var.dns_service_ip
+		[37m90 | [33m  }
+		[37m91 | [33m
+		[37m92 | [33m  oms_agent {
+		[37m93 | [33m    log_analytics_workspace_id = azurerm_log_analytics_workspace.this.id
+		[37m94 | [33m  }
+		[37m95 | [33m
+		[37m96 | [33m  depends_on = [azurerm_subnet.aks]
+		[37m97 | [33m}
+
+Check: CKV_AZURE_226: "Ensure ephemeral disks are used for OS disks"
+	FAILED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azure-226
+[0m
+		[37m50 | [33mresource "azurerm_kubernetes_cluster" "this" {
+		[37m51 | [33m  name                              = var.cluster_name
+		[37m52 | [33m  location                          = azurerm_resource_group.this.location
+		[37m53 | [33m  resource_group_name               = azurerm_resource_group.this.name
+		[37m54 | [33m  dns_prefix                        = var.cluster_name
+		[37m55 | [33m  sku_tier                          = "Standard"
+		[37m56 | [33m  kubernetes_version                = var.kubernetes_version
+		[37m57 | [33m  private_cluster_enabled           = var.private_cluster_enabled
+		[37m58 | [33m  private_dns_zone_id               = var.private_cluster_enabled ? "System" : null
+		[37m59 | [33m  role_based_access_control_enabled = true
+		[37m60 | [33m  azure_policy_enabled              = true
+		[37m61 | [33m  oidc_issuer_enabled               = true
+		[37m62 | [33m  workload_identity_enabled         = true
+		[37m63 | [33m  tags                              = var.tags
+		[37m64 | [33m
+		[37m65 | [33m  default_node_pool {
+		[37m66 | [33m    name                       = "system"
+		[37m67 | [33m    node_count                 = var.node_count
+		[37m68 | [33m    vm_size                    = var.node_vm_size
+		[37m69 | [33m    os_sku                     = var.node_os_sku
+		[37m70 | [33m    os_disk_type               = "Managed"
+		[37m71 | [33m    vnet_subnet_id             = azurerm_subnet.aks.id
+		[37m72 | [33m    type                       = "VirtualMachineScaleSets"
+		[37m73 | [33m    auto_scaling_enabled       = false
+		[37m74 | [33m    enable_encryption_at_host  = true
+		[37m75 | [33m    upgrade_settings {
+		[37m76 | [33m      max_surge = "33%"
+		[37m77 | [33m    }
+		[37m78 | [33m  }
+		[37m79 | [33m
+		[37m80 | [33m  identity {
+		[37m81 | [33m    type = "SystemAssigned"
+		[37m82 | [33m  }
+		[37m83 | [33m
+		[37m84 | [33m  network_profile {
+		[37m85 | [33m    network_plugin    = "azure"
+		[37m86 | [33m    network_policy    = "azure"
+		[37m87 | [33m    load_balancer_sku = "standard"
+		[37m88 | [33m    service_cidr      = var.service_cidr
+		[37m89 | [33m    dns_service_ip    = var.dns_service_ip
+		[37m90 | [33m  }
+		[37m91 | [33m
+		[37m92 | [33m  oms_agent {
+		[37m93 | [33m    log_analytics_workspace_id = azurerm_log_analytics_workspace.this.id
+		[37m94 | [33m  }
+		[37m95 | [33m
+		[37m96 | [33m  depends_on = [azurerm_subnet.aks]
+		[37m97 | [33m}
+
+Check: CKV_AZURE_141: "Ensure AKS local admin account is disabled"
+	FAILED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-iam-policies/ensure-azure-kubernetes-service-aks-local-admin-account-is-disabled
+[0m
+		[37m50 | [33mresource "azurerm_kubernetes_cluster" "this" {
+		[37m51 | [33m  name                              = var.cluster_name
+		[37m52 | [33m  location                          = azurerm_resource_group.this.location
+		[37m53 | [33m  resource_group_name               = azurerm_resource_group.this.name
+		[37m54 | [33m  dns_prefix                        = var.cluster_name
+		[37m55 | [33m  sku_tier                          = "Standard"
+		[37m56 | [33m  kubernetes_version                = var.kubernetes_version
+		[37m57 | [33m  private_cluster_enabled           = var.private_cluster_enabled
+		[37m58 | [33m  private_dns_zone_id               = var.private_cluster_enabled ? "System" : null
+		[37m59 | [33m  role_based_access_control_enabled = true
+		[37m60 | [33m  azure_policy_enabled              = true
+		[37m61 | [33m  oidc_issuer_enabled               = true
+		[37m62 | [33m  workload_identity_enabled         = true
+		[37m63 | [33m  tags                              = var.tags
+		[37m64 | [33m
+		[37m65 | [33m  default_node_pool {
+		[37m66 | [33m    name                       = "system"
+		[37m67 | [33m    node_count                 = var.node_count
+		[37m68 | [33m    vm_size                    = var.node_vm_size
+		[37m69 | [33m    os_sku                     = var.node_os_sku
+		[37m70 | [33m    os_disk_type               = "Managed"
+		[37m71 | [33m    vnet_subnet_id             = azurerm_subnet.aks.id
+		[37m72 | [33m    type                       = "VirtualMachineScaleSets"
+		[37m73 | [33m    auto_scaling_enabled       = false
+		[37m74 | [33m    enable_encryption_at_host  = true
+		[37m75 | [33m    upgrade_settings {
+		[37m76 | [33m      max_surge = "33%"
+		[37m77 | [33m    }
+		[37m78 | [33m  }
+		[37m79 | [33m
+		[37m80 | [33m  identity {
+		[37m81 | [33m    type = "SystemAssigned"
+		[37m82 | [33m  }
+		[37m83 | [33m
+		[37m84 | [33m  network_profile {
+		[37m85 | [33m    network_plugin    = "azure"
+		[37m86 | [33m    network_policy    = "azure"
+		[37m87 | [33m    load_balancer_sku = "standard"
+		[37m88 | [33m    service_cidr      = var.service_cidr
+		[37m89 | [33m    dns_service_ip    = var.dns_service_ip
+		[37m90 | [33m  }
+		[37m91 | [33m
+		[37m92 | [33m  oms_agent {
+		[37m93 | [33m    log_analytics_workspace_id = azurerm_log_analytics_workspace.this.id
+		[37m94 | [33m  }
+		[37m95 | [33m
+		[37m96 | [33m  depends_on = [azurerm_subnet.aks]
+		[37m97 | [33m}
+
+Check: CKV_AZURE_168: "Ensure Azure Kubernetes Cluster (AKS) nodes should use a minimum number of 50 pods."
+	FAILED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/azr-kubernetes-168
+[0m
+		[37m50 | [33mresource "azurerm_kubernetes_cluster" "this" {
+		[37m51 | [33m  name                              = var.cluster_name
+		[37m52 | [33m  location                          = azurerm_resource_group.this.location
+		[37m53 | [33m  resource_group_name               = azurerm_resource_group.this.name
+		[37m54 | [33m  dns_prefix                        = var.cluster_name
+		[37m55 | [33m  sku_tier                          = "Standard"
+		[37m56 | [33m  kubernetes_version                = var.kubernetes_version
+		[37m57 | [33m  private_cluster_enabled           = var.private_cluster_enabled
+		[37m58 | [33m  private_dns_zone_id               = var.private_cluster_enabled ? "System" : null
+		[37m59 | [33m  role_based_access_control_enabled = true
+		[37m60 | [33m  azure_policy_enabled              = true
+		[37m61 | [33m  oidc_issuer_enabled               = true
+		[37m62 | [33m  workload_identity_enabled         = true
+		[37m63 | [33m  tags                              = var.tags
+		[37m64 | [33m
+		[37m65 | [33m  default_node_pool {
+		[37m66 | [33m    name                       = "system"
+		[37m67 | [33m    node_count                 = var.node_count
+		[37m68 | [33m    vm_size                    = var.node_vm_size
+		[37m69 | [33m    os_sku                     = var.node_os_sku
+		[37m70 | [33m    os_disk_type               = "Managed"
+		[37m71 | [33m    vnet_subnet_id             = azurerm_subnet.aks.id
+		[37m72 | [33m    type                       = "VirtualMachineScaleSets"
+		[37m73 | [33m    auto_scaling_enabled       = false
+		[37m74 | [33m    enable_encryption_at_host  = true
+		[37m75 | [33m    upgrade_settings {
+		[37m76 | [33m      max_surge = "33%"
+		[37m77 | [33m    }
+		[37m78 | [33m  }
+		[37m79 | [33m
+		[37m80 | [33m  identity {
+		[37m81 | [33m    type = "SystemAssigned"
+		[37m82 | [33m  }
+		[37m83 | [33m
+		[37m84 | [33m  network_profile {
+		[37m85 | [33m    network_plugin    = "azure"
+		[37m86 | [33m    network_policy    = "azure"
+		[37m87 | [33m    load_balancer_sku = "standard"
+		[37m88 | [33m    service_cidr      = var.service_cidr
+		[37m89 | [33m    dns_service_ip    = var.dns_service_ip
+		[37m90 | [33m  }
+		[37m91 | [33m
+		[37m92 | [33m  oms_agent {
+		[37m93 | [33m    log_analytics_workspace_id = azurerm_log_analytics_workspace.this.id
+		[37m94 | [33m  }
+		[37m95 | [33m
+		[37m96 | [33m  depends_on = [azurerm_subnet.aks]
+		[37m97 | [33m}
+
+Check: CKV_AZURE_232: "Ensure that only critical system pods run on system nodes"
+	FAILED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/bc-azure-232
+[0m
+		[37m50 | [33mresource "azurerm_kubernetes_cluster" "this" {
+		[37m51 | [33m  name                              = var.cluster_name
+		[37m52 | [33m  location                          = azurerm_resource_group.this.location
+		[37m53 | [33m  resource_group_name               = azurerm_resource_group.this.name
+		[37m54 | [33m  dns_prefix                        = var.cluster_name
+		[37m55 | [33m  sku_tier                          = "Standard"
+		[37m56 | [33m  kubernetes_version                = var.kubernetes_version
+		[37m57 | [33m  private_cluster_enabled           = var.private_cluster_enabled
+		[37m58 | [33m  private_dns_zone_id               = var.private_cluster_enabled ? "System" : null
+		[37m59 | [33m  role_based_access_control_enabled = true
+		[37m60 | [33m  azure_policy_enabled              = true
+		[37m61 | [33m  oidc_issuer_enabled               = true
+		[37m62 | [33m  workload_identity_enabled         = true
+		[37m63 | [33m  tags                              = var.tags
+		[37m64 | [33m
+		[37m65 | [33m  default_node_pool {
+		[37m66 | [33m    name                       = "system"
+		[37m67 | [33m    node_count                 = var.node_count
+		[37m68 | [33m    vm_size                    = var.node_vm_size
+		[37m69 | [33m    os_sku                     = var.node_os_sku
+		[37m70 | [33m    os_disk_type               = "Managed"
+		[37m71 | [33m    vnet_subnet_id             = azurerm_subnet.aks.id
+		[37m72 | [33m    type                       = "VirtualMachineScaleSets"
+		[37m73 | [33m    auto_scaling_enabled       = false
+		[37m74 | [33m    enable_encryption_at_host  = true
+		[37m75 | [33m    upgrade_settings {
+		[37m76 | [33m      max_surge = "33%"
+		[37m77 | [33m    }
+		[37m78 | [33m  }
+		[37m79 | [33m
+		[37m80 | [33m  identity {
+		[37m81 | [33m    type = "SystemAssigned"
+		[37m82 | [33m  }
+		[37m83 | [33m
+		[37m84 | [33m  network_profile {
+		[37m85 | [33m    network_plugin    = "azure"
+		[37m86 | [33m    network_policy    = "azure"
+		[37m87 | [33m    load_balancer_sku = "standard"
+		[37m88 | [33m    service_cidr      = var.service_cidr
+		[37m89 | [33m    dns_service_ip    = var.dns_service_ip
+		[37m90 | [33m  }
+		[37m91 | [33m
+		[37m92 | [33m  oms_agent {
+		[37m93 | [33m    log_analytics_workspace_id = azurerm_log_analytics_workspace.this.id
+		[37m94 | [33m  }
+		[37m95 | [33m
+		[37m96 | [33m  depends_on = [azurerm_subnet.aks]
+		[37m97 | [33m}
+
+Check: CKV_AZURE_172: "Ensure autorotation of Secrets Store CSI Driver secrets for AKS clusters"
+	FAILED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-172
+[0m
+		[37m50 | [33mresource "azurerm_kubernetes_cluster" "this" {
+		[37m51 | [33m  name                              = var.cluster_name
+		[37m52 | [33m  location                          = azurerm_resource_group.this.location
+		[37m53 | [33m  resource_group_name               = azurerm_resource_group.this.name
+		[37m54 | [33m  dns_prefix                        = var.cluster_name
+		[37m55 | [33m  sku_tier                          = "Standard"
+		[37m56 | [33m  kubernetes_version                = var.kubernetes_version
+		[37m57 | [33m  private_cluster_enabled           = var.private_cluster_enabled
+		[37m58 | [33m  private_dns_zone_id               = var.private_cluster_enabled ? "System" : null
+		[37m59 | [33m  role_based_access_control_enabled = true
+		[37m60 | [33m  azure_policy_enabled              = true
+		[37m61 | [33m  oidc_issuer_enabled               = true
+		[37m62 | [33m  workload_identity_enabled         = true
+		[37m63 | [33m  tags                              = var.tags
+		[37m64 | [33m
+		[37m65 | [33m  default_node_pool {
+		[37m66 | [33m    name                       = "system"
+		[37m67 | [33m    node_count                 = var.node_count
+		[37m68 | [33m    vm_size                    = var.node_vm_size
+		[37m69 | [33m    os_sku                     = var.node_os_sku
+		[37m70 | [33m    os_disk_type               = "Managed"
+		[37m71 | [33m    vnet_subnet_id             = azurerm_subnet.aks.id
+		[37m72 | [33m    type                       = "VirtualMachineScaleSets"
+		[37m73 | [33m    auto_scaling_enabled       = false
+		[37m74 | [33m    enable_encryption_at_host  = true
+		[37m75 | [33m    upgrade_settings {
+		[37m76 | [33m      max_surge = "33%"
+		[37m77 | [33m    }
+		[37m78 | [33m  }
+		[37m79 | [33m
+		[37m80 | [33m  identity {
+		[37m81 | [33m    type = "SystemAssigned"
+		[37m82 | [33m  }
+		[37m83 | [33m
+		[37m84 | [33m  network_profile {
+		[37m85 | [33m    network_plugin    = "azure"
+		[37m86 | [33m    network_policy    = "azure"
+		[37m87 | [33m    load_balancer_sku = "standard"
+		[37m88 | [33m    service_cidr      = var.service_cidr
+		[37m89 | [33m    dns_service_ip    = var.dns_service_ip
+		[37m90 | [33m  }
+		[37m91 | [33m
+		[37m92 | [33m  oms_agent {
+		[37m93 | [33m    log_analytics_workspace_id = azurerm_log_analytics_workspace.this.id
+		[37m94 | [33m  }
+		[37m95 | [33m
+		[37m96 | [33m  depends_on = [azurerm_subnet.aks]
+		[37m97 | [33m}
+
+Check: CKV_AZURE_171: "Ensure AKS cluster upgrade channel is chosen"
+	FAILED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-171
+[0m
+		[37m50 | [33mresource "azurerm_kubernetes_cluster" "this" {
+		[37m51 | [33m  name                              = var.cluster_name
+		[37m52 | [33m  location                          = azurerm_resource_group.this.location
+		[37m53 | [33m  resource_group_name               = azurerm_resource_group.this.name
+		[37m54 | [33m  dns_prefix                        = var.cluster_name
+		[37m55 | [33m  sku_tier                          = "Standard"
+		[37m56 | [33m  kubernetes_version                = var.kubernetes_version
+		[37m57 | [33m  private_cluster_enabled           = var.private_cluster_enabled
+		[37m58 | [33m  private_dns_zone_id               = var.private_cluster_enabled ? "System" : null
+		[37m59 | [33m  role_based_access_control_enabled = true
+		[37m60 | [33m  azure_policy_enabled              = true
+		[37m61 | [33m  oidc_issuer_enabled               = true
+		[37m62 | [33m  workload_identity_enabled         = true
+		[37m63 | [33m  tags                              = var.tags
+		[37m64 | [33m
+		[37m65 | [33m  default_node_pool {
+		[37m66 | [33m    name                       = "system"
+		[37m67 | [33m    node_count                 = var.node_count
+		[37m68 | [33m    vm_size                    = var.node_vm_size
+		[37m69 | [33m    os_sku                     = var.node_os_sku
+		[37m70 | [33m    os_disk_type               = "Managed"
+		[37m71 | [33m    vnet_subnet_id             = azurerm_subnet.aks.id
+		[37m72 | [33m    type                       = "VirtualMachineScaleSets"
+		[37m73 | [33m    auto_scaling_enabled       = false
+		[37m74 | [33m    enable_encryption_at_host  = true
+		[37m75 | [33m    upgrade_settings {
+		[37m76 | [33m      max_surge = "33%"
+		[37m77 | [33m    }
+		[37m78 | [33m  }
+		[37m79 | [33m
+		[37m80 | [33m  identity {
+		[37m81 | [33m    type = "SystemAssigned"
+		[37m82 | [33m  }
+		[37m83 | [33m
+		[37m84 | [33m  network_profile {
+		[37m85 | [33m    network_plugin    = "azure"
+		[37m86 | [33m    network_policy    = "azure"
+		[37m87 | [33m    load_balancer_sku = "standard"
+		[37m88 | [33m    service_cidr      = var.service_cidr
+		[37m89 | [33m    dns_service_ip    = var.dns_service_ip
+		[37m90 | [33m  }
+		[37m91 | [33m
+		[37m92 | [33m  oms_agent {
+		[37m93 | [33m    log_analytics_workspace_id = azurerm_log_analytics_workspace.this.id
+		[37m94 | [33m  }
+		[37m95 | [33m
+		[37m96 | [33m  depends_on = [azurerm_subnet.aks]
+		[37m97 | [33m}
+
+Check: CKV_AZURE_117: "Ensure that AKS uses disk encryption set"
+	FAILED for resource: azurerm_kubernetes_cluster.this
+	File: \main.tf:50-97
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-kubernetes-policies/ensure-that-aks-uses-disk-encryption-set
+[0m
+		[37m50 | [33mresource "azurerm_kubernetes_cluster" "this" {
+		[37m51 | [33m  name                              = var.cluster_name
+		[37m52 | [33m  location                          = azurerm_resource_group.this.location
+		[37m53 | [33m  resource_group_name               = azurerm_resource_group.this.name
+		[37m54 | [33m  dns_prefix                        = var.cluster_name
+		[37m55 | [33m  sku_tier                          = "Standard"
+		[37m56 | [33m  kubernetes_version                = var.kubernetes_version
+		[37m57 | [33m  private_cluster_enabled           = var.private_cluster_enabled
+		[37m58 | [33m  private_dns_zone_id               = var.private_cluster_enabled ? "System" : null
+		[37m59 | [33m  role_based_access_control_enabled = true
+		[37m60 | [33m  azure_policy_enabled              = true
+		[37m61 | [33m  oidc_issuer_enabled               = true
+		[37m62 | [33m  workload_identity_enabled         = true
+		[37m63 | [33m  tags                              = var.tags
+		[37m64 | [33m
+		[37m65 | [33m  default_node_pool {
+		[37m66 | [33m    name                       = "system"
+		[37m67 | [33m    node_count                 = var.node_count
+		[37m68 | [33m    vm_size                    = var.node_vm_size
+		[37m69 | [33m    os_sku                     = var.node_os_sku
+		[37m70 | [33m    os_disk_type               = "Managed"
+		[37m71 | [33m    vnet_subnet_id             = azurerm_subnet.aks.id
+		[37m72 | [33m    type                       = "VirtualMachineScaleSets"
+		[37m73 | [33m    auto_scaling_enabled       = false
+		[37m74 | [33m    enable_encryption_at_host  = true
+		[37m75 | [33m    upgrade_settings {
+		[37m76 | [33m      max_surge = "33%"
+		[37m77 | [33m    }
+		[37m78 | [33m  }
+		[37m79 | [33m
+		[37m80 | [33m  identity {
+		[37m81 | [33m    type = "SystemAssigned"
+		[37m82 | [33m  }
+		[37m83 | [33m
+		[37m84 | [33m  network_profile {
+		[37m85 | [33m    network_plugin    = "azure"
+		[37m86 | [33m    network_policy    = "azure"
+		[37m87 | [33m    load_balancer_sku = "standard"
+		[37m88 | [33m    service_cidr      = var.service_cidr
+		[37m89 | [33m    dns_service_ip    = var.dns_service_ip
+		[37m90 | [33m  }
+		[37m91 | [33m
+		[37m92 | [33m  oms_agent {
+		[37m93 | [33m    log_analytics_workspace_id = azurerm_log_analytics_workspace.this.id
+		[37m94 | [33m  }
+		[37m95 | [33m
+		[37m96 | [33m  depends_on = [azurerm_subnet.aks]
+		[37m97 | [33m}
+
+Check: CKV_AZURE_237: "Ensure dedicated data endpoints are enabled."
+	FAILED for resource: azurerm_container_registry.this
+	File: \main.tf:107-114
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-237
+[0m
+		[37m107 | [33mresource "azurerm_container_registry" "this" {
+		[37m108 | [33m  name = var.acr_name != "" ? var.acr_name : substr(replace(lower("${var.cluster_name}acr${random_string.acr_suffix.result}"), "-", ""), 0, 50)
+		[37m109 | [33m  resource_group_name = azurerm_resource_group.this.name
+		[37m110 | [33m  location            = azurerm_resource_group.this.location
+		[37m111 | [33m  sku                 = "Standard"
+		[37m112 | [33m  admin_enabled       = false
+		[37m113 | [33m  tags                = var.tags
+		[37m114 | [33m}
+
+Check: CKV_AZURE_166: "Ensure container image quarantine, scan, and mark images verified"
+	FAILED for resource: azurerm_container_registry.this
+	File: \main.tf:107-114
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-166
+[0m
+		[37m107 | [33mresource "azurerm_container_registry" "this" {
+		[37m108 | [33m  name = var.acr_name != "" ? var.acr_name : substr(replace(lower("${var.cluster_name}acr${random_string.acr_suffix.result}"), "-", ""), 0, 50)
+		[37m109 | [33m  resource_group_name = azurerm_resource_group.this.name
+		[37m110 | [33m  location            = azurerm_resource_group.this.location
+		[37m111 | [33m  sku                 = "Standard"
+		[37m112 | [33m  admin_enabled       = false
+		[37m113 | [33m  tags                = var.tags
+		[37m114 | [33m}
+
+Check: CKV_AZURE_167: "Ensure a retention policy is set to cleanup untagged manifests."
+	FAILED for resource: azurerm_container_registry.this
+	File: \main.tf:107-114
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-167
+[0m
+		[37m107 | [33mresource "azurerm_container_registry" "this" {
+		[37m108 | [33m  name = var.acr_name != "" ? var.acr_name : substr(replace(lower("${var.cluster_name}acr${random_string.acr_suffix.result}"), "-", ""), 0, 50)
+		[37m109 | [33m  resource_group_name = azurerm_resource_group.this.name
+		[37m110 | [33m  location            = azurerm_resource_group.this.location
+		[37m111 | [33m  sku                 = "Standard"
+		[37m112 | [33m  admin_enabled       = false
+		[37m113 | [33m  tags                = var.tags
+		[37m114 | [33m}
+
+Check: CKV_AZURE_233: "Ensure Azure Container Registry (ACR) is zone redundant"
+	FAILED for resource: azurerm_container_registry.this
+	File: \main.tf:107-114
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-233
+[0m
+		[37m107 | [33mresource "azurerm_container_registry" "this" {
+		[37m108 | [33m  name = var.acr_name != "" ? var.acr_name : substr(replace(lower("${var.cluster_name}acr${random_string.acr_suffix.result}"), "-", ""), 0, 50)
+		[37m109 | [33m  resource_group_name = azurerm_resource_group.this.name
+		[37m110 | [33m  location            = azurerm_resource_group.this.location
+		[37m111 | [33m  sku                 = "Standard"
+		[37m112 | [33m  admin_enabled       = false
+		[37m113 | [33m  tags                = var.tags
+		[37m114 | [33m}
+
+Check: CKV_AZURE_165: "Ensure geo-replicated container registries to match multi-region container deployments."
+	FAILED for resource: azurerm_container_registry.this
+	File: \main.tf:107-114
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-165
+[0m
+		[37m107 | [33mresource "azurerm_container_registry" "this" {
+		[37m108 | [33m  name = var.acr_name != "" ? var.acr_name : substr(replace(lower("${var.cluster_name}acr${random_string.acr_suffix.result}"), "-", ""), 0, 50)
+		[37m109 | [33m  resource_group_name = azurerm_resource_group.this.name
+		[37m110 | [33m  location            = azurerm_resource_group.this.location
+		[37m111 | [33m  sku                 = "Standard"
+		[37m112 | [33m  admin_enabled       = false
+		[37m113 | [33m  tags                = var.tags
+		[37m114 | [33m}
+
+Check: CKV_AZURE_139: "Ensure ACR set to disable public networking"
+	FAILED for resource: azurerm_container_registry.this
+	File: \main.tf:107-114
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-azure-acr-is-set-to-disable-public-networking
+[0m
+		[37m107 | [33mresource "azurerm_container_registry" "this" {
+		[37m108 | [33m  name = var.acr_name != "" ? var.acr_name : substr(replace(lower("${var.cluster_name}acr${random_string.acr_suffix.result}"), "-", ""), 0, 50)
+		[37m109 | [33m  resource_group_name = azurerm_resource_group.this.name
+		[37m110 | [33m  location            = azurerm_resource_group.this.location
+		[37m111 | [33m  sku                 = "Standard"
+		[37m112 | [33m  admin_enabled       = false
+		[37m113 | [33m  tags                = var.tags
+		[37m114 | [33m}
+
+Check: CKV_AZURE_164: "Ensures that ACR uses signed/trusted images"
+	FAILED for resource: azurerm_container_registry.this
+	File: \main.tf:107-114
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-164
+[0m
+		[37m107 | [33mresource "azurerm_container_registry" "this" {
+		[37m108 | [33m  name = var.acr_name != "" ? var.acr_name : substr(replace(lower("${var.cluster_name}acr${random_string.acr_suffix.result}"), "-", ""), 0, 50)
+		[37m109 | [33m  resource_group_name = azurerm_resource_group.this.name
+		[37m110 | [33m  location            = azurerm_resource_group.this.location
+		[37m111 | [33m  sku                 = "Standard"
+		[37m112 | [33m  admin_enabled       = false
+		[37m113 | [33m  tags                = var.tags
+		[37m114 | [33m}
+
+Check: CKV_AZURE_218: "Ensure Application Gateway defines secure protocols for in transit communication"
+	FAILED for resource: azurerm_application_gateway.this
+	File: \main.tf:132-206
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-218
+[0m
+		[33mCode lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_AZURE_217: "Ensure Azure Application gateways listener that allow connection requests over HTTP"
+	FAILED for resource: azurerm_application_gateway.this
+	File: \main.tf:132-206
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-217
+[0m
+		[33mCode lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV_AZURE_120: "Ensure that Application Gateway enables WAF"
+	FAILED for resource: azurerm_application_gateway.this
+	File: \main.tf:132-206
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-application-gateway-enables-waf
+[0m
+		[33mCode lines for this resource are too many. Please use IDE of your choice to review the file.
+Check: CKV2_AZURE_31: "Ensure VNET subnet is configured with a Network Security Group (NSG)"
+	FAILED for resource: azurerm_subnet.aks
+	File: \main.tf:34-39
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-31
+[0m
+		[37m34 | [33mresource "azurerm_subnet" "aks" {
+		[37m35 | [33m  name                 = "snet-aks"
+		[37m36 | [33m  resource_group_name  = azurerm_resource_group.this.name
+		[37m37 | [33m  virtual_network_name = azurerm_virtual_network.this.name
+		[37m38 | [33m  address_prefixes     = [var.aks_subnet_address_prefix]
+		[37m39 | [33m}
+
+Check: CKV2_AZURE_31: "Ensure VNET subnet is configured with a Network Security Group (NSG)"
+	FAILED for resource: azurerm_subnet.appgw
+	File: \main.tf:116-121
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-2-31
+[0m
+		[37m116 | [33mresource "azurerm_subnet" "appgw" {
+		[37m117 | [33m  name                 = "snet-appgw"
+		[37m118 | [33m  resource_group_name  = azurerm_resource_group.this.name
+		[37m119 | [33m  virtual_network_name = azurerm_virtual_network.this.name
+		[37m120 | [33m  address_prefixes     = [var.app_gateway_subnet_prefix]
+		[37m121 | [33m}
+
