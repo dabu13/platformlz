@@ -31,6 +31,7 @@ Copy terraform.tfvars.example to terraform.tfvars and adjust values such as:
 ```bash
 terraform init
 terraform plan
+##updated environment secret
 ```
 
 ## GitHub Actions
