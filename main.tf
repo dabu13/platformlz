@@ -193,6 +193,7 @@ resource "azurerm_application_gateway" "this" {
     http_listener_name         = "app-http-listener"
     backend_address_pool_name  = "app-backend-pool"
     backend_http_settings_name = "app-http-settings"
+    priority                   = 100
   }
 
   # WAF removed due to ApplicationGatewayWafConfigurationDeprecated.
