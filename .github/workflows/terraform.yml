@@ -56,13 +56,7 @@ jobs:
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
-
-    - ##name: Terraform Format Check
-      ##continue-on-error: run: terraform fmt -check
-
-    - ##continue-on-error: name: Terraform Validate
-      ##continue-on-error: run: terraform validate
-
+      
     - name: Terraform Init
       run: terraform init -input=false
 
